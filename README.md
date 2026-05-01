@@ -106,4 +106,4 @@ cd navsight-ai
 
 pip install -r requirements.txt
 python detect.py
->>>>>>> 08b042b72feaf356ad240a69bca2ba67e18553ae
+
