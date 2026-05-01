@@ -150,9 +150,13 @@ with st.sidebar:
     
     enable_audio = st.checkbox(
         "🔊 Audio Guidance",
-        value=True,
-        help="Enable voice alerts"
+        value=audio_helper.available,
+        help="Enable voice alerts" if audio_helper.available else "Audio unavailable (headless environment)",
+        disabled=not audio_helper.available
     )
+    
+    if not audio_helper.available:
+        st.warning("🎙️ **Audio unavailable** — Running on headless server (no speakers). Audio only works locally.", icon="⚠️")
     
     enable_boxes = st.checkbox(
         "📦 Draw Bounding Boxes",
