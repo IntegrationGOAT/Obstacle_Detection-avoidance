@@ -1,11 +1,12 @@
 import streamlit as st
+import os
+os.environ['LIBGL_ALWAYS_INDIRECT'] = '1'
 import cv2
 import numpy as np
 import av
 from streamlit_webrtc import webrtc_streamer, WebRtcMode, RTCConfiguration
 from detection_engine import DetectionEngine
 from audio_helper import AudioHelper
-import os
 from threading import Lock
 
 # ====== THREAD-SAFE COUNTERS ======
@@ -101,9 +102,9 @@ st.markdown("""
         margin: 8px 0;
     }
     [data-testid="stElementContainer"] video {
-        max-width: 100%;
+        max-width: 50%;
         height: auto;
-        aspect-ratio: 16 / 9;
+        aspect-ratio: 1/1;
         object-fit: contain;
     }
     </style>
