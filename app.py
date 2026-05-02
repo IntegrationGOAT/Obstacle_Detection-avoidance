@@ -1,12 +1,11 @@
 import streamlit as st
-import os
-os.environ['LIBGL_ALWAYS_INDIRECT'] = '1'
 import cv2
 import numpy as np
 import av
 from streamlit_webrtc import webrtc_streamer, WebRtcMode, RTCConfiguration
 from detection_engine import DetectionEngine
 from audio_helper import AudioHelper
+import os
 from threading import Lock
 
 # ====== THREAD-SAFE COUNTERS ======
